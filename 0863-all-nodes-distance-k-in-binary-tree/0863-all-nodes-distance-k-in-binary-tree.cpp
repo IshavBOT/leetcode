@@ -48,17 +48,19 @@ public:
                 q.pop();
                 TreeNode* node=curr.first;
                 int d=curr.second;
-                visited[node]=true;
 
                 if(node->left && !visited[node->left]){
+                    visited[node->left]=true;
                     q.push({node->left,d+1});
                 }
 
                 if(node->right && !visited[node->right]){
+                    visited[node->right]=true;
                     q.push({node->right,d+1});
                 }
 
                 if(parentMap[node]!=NULL && !visited[parentMap[node]]){
+                    visited[parentMap[node]]=true;
                     q.push({parentMap[node],d+1});
                 }
             }
