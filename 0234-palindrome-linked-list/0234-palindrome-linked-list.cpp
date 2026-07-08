@@ -36,7 +36,7 @@ public:
         }
         ListNode* rightHead=reverse(slow);
 
-        while(head!=slow){
+        while(rightHead){
             if(head->val!=rightHead->val) return false;
             head=head->next;
             rightHead=rightHead->next;
